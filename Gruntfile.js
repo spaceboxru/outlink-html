@@ -3,7 +3,7 @@
 module.exports = function(grunt) {
 	
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-	
+
 	grunt.loadNpmTasks('assemble');
 	
 	grunt.initConfig({
@@ -34,6 +34,12 @@ module.exports = function(grunt) {
 				src: ['**/*.{gif,png,jpeg,svg,woff,woff2,ttf,eot,mp3,mp4}'],
 				dest: '<%= dirs.output %>/images/sprites/'
 			},
+			'svg-sprites': {
+				expand: true,
+				cwd: '<%= dirs.input %>/images/svg-sprites/',
+				src: ['**/*.{svg}'],
+				dest: '<%= dirs.output %>/images/svg-sprites/'
+			},
 			javascripts: {
 				expand: true,
 				cwd: '<%= dirs.input %>/javascripts/',
@@ -45,6 +51,13 @@ module.exports = function(grunt) {
 		clean: {
 			build: {
 				src: ['<%= dirs.output %>']
+			},
+			images: {
+				src: [
+						'<%= dirs.output %>/images/svg-sprites/sprites/css/**/*.{svg,css}',
+						'<%= dirs.output %>/images/stylesheets/**/*.{svg,css}',
+						'<%= dirs.input %>/images/svg-sprites/sprites/css/**/*.{svg,css}'
+				]
 			},
 			stylesheets: {
 				src: ['<%= dirs.output %>/**/*.css']
@@ -214,6 +227,27 @@ module.exports = function(grunt) {
 			}
 		},
 		
+		svg_sprite: {
+			basic: {
+				// Target basics
+				expand              : true,
+				cwd                 : '<%= dirs.input %>/images/svg-sprites/',
+				src                 : ['**/*.svg'],
+				dest                : '<%= dirs.output %>/stylesheets/svg-sprites/',
+
+				// Target options
+				options             : {
+					mode            : {
+						css         : {     // Activate the «css» mode
+							render  : {
+								css : true  // Activate CSS output (with default options)
+							}
+						}
+					}
+				}
+			}
+		},
+		
 		connect: {
 			server: {
 				options: {
@@ -279,6 +313,11 @@ module.exports = function(grunt) {
 				tasks: 'copy:sprites'
 			},
 			
+			'svg-sprites': {
+				files: ['<%= dirs.input %>/images/svg-sprites/**'],
+				tasks: 'copy:svg-sprites'
+			},
+			
 			assets: {
 				files: ['<%= dirs.input %>/images/**'],
 				tasks: 'copy:assets'
@@ -302,13 +341,15 @@ module.exports = function(grunt) {
 		
 	});
 	
+	grunt.registerTask('copy:svg-sprites', ['clean:images','svg_sprite']);
+	
 	grunt.registerTask('copy:sprites', ['sprite']);
 	
-	grunt.registerTask('stylesheets', ['clean:stylesheets','sprite','less','autoprefixer','concat:stylesheets','bless']);
+	grunt.registerTask('stylesheets', ['clean:stylesheets','sprite','svg_sprite','less','autoprefixer','concat:stylesheets','bless']);
 	
 	grunt.registerTask('javascripts', ['clean:javascripts','concat:javascripts','copy:javascripts','uglify']);
 	
-	grunt.registerTask('build', ['clean','copy','javascripts','stylesheets','assemble']);
+	grunt.registerTask('build', ['clean','clean:images','copy','javascripts','stylesheets','assemble']);
 	
 	grunt.registerTask('default', ['build','connect',/*'browserSync',*/'watch']);
 	
