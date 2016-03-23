@@ -1,0 +1,385 @@
+@iterations: 100;
+
+.loopingClas (@i) when (@i >= 0) {
+	.p-l-@{i} {
+		padding-left:@i*1px!important;
+	}
+	.p-t-@{i} {
+		padding-top:@i*1px!important;
+	}
+	.p-r-@{i} {
+		padding-right:@i*1px!important;
+	}
+	.p-b-@{i} {
+		padding-bottom:@i*1px!important;
+	}
+	.m-l-@{i} {
+		margin-left:@i*1px!important;
+	}
+	.m-t-@{i} {
+		margin-top:@i*1px!important;
+	}
+	.m-r-@{i} {
+		margin-right:@i*1px!important;
+	}
+	.m-b-@{i} {
+		margin-bottom:@i*1px!important;
+	}
+	.loopingClas(@i - 5);
+}
+.loopingClas(@iterations);
+
+
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+
+// Body reset
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// Links
+
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  .img-responsive();
+}
+
+// Rounded corners
+.img-rounded {
+  border-radius: @border-radius-large;
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: @thumbnail-padding;
+  line-height: @line-height-base;
+  background-color: @thumbnail-bg;
+  border: 1px solid @thumbnail-border;
+  border-radius: @thumbnail-border-radius;
+  .transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  .img-responsive(inline-block);
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
+}
+
+
+// Horizontal rules
+
+hr {
+  margin-top:    @line-height-computed;
+  margin-bottom: @line-height-computed;
+  border: 0;
+  border-top: 1px solid @hr-border;
+}
+
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+.relative {
+	position: relative!important;
+}
+.absolute {
+	position: absolute!important;
+}
+.display-block {
+	display: block!important;
+}
+.display-inline-block {
+	display: inline-block!important;
+}
+body,
+html {
+	height: auto;
+}
+.content {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+* {
+	transition: color 0.08s, opacity 0.08s;
+}
+*,
+input,
+select,
+textarea,
+a,button,
+a:hover,button:hover,
+a:focus,button:focus,
+a:active,button:active,
+a:active:focus,button:active:focus {
+	&:focus,
+	&:focus:active,
+	&:active:focus {
+		outline: none;
+	}
+}
+.readmore {
+	font-size: 15px!important;
+	color: @base-color!important;
+	font-weight: 700;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-decoration: none;
+	.decorate {
+		border-bottom: 1px solid #a1a1a1;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1.0;
+	}
+	&:hover {
+		.decorate {
+			border-bottom-color: transparent;
+			color: @orange-color;
+		}
+		/*
+		.icons--readmore:after {
+			.sprite(@readmore-hover);
+		}
+		*/
+	}
+	.icons {
+		vertical-align: middle;
+		margin-left: 6px;
+	}
+}
+.feedback {
+	line-height: 1.1;
+	color: @base-dark-color;
+	font-size: 15px;
+	font-weight: 700;
+	display: inline-block;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	.decorate {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 15px;
+		line-height: 1.0;
+		border-bottom: 1px solid;
+		margin-left: 10px;
+	}
+	&:hover {
+		color: @orange-color;
+		/*
+		.icons--back {
+			&:after {
+				.sprite(@back-hover);
+			}
+		}
+		*/
+		.decorate {
+			border-bottom-color: transparent;
+		}
+	}
+}
+.shadow-line {
+	display: block;
+	position: relative;
+	height: 40px;
+	margin-bottom: 40px;
+	&:after {
+		content: "";
+		background: #fff;
+		display: block;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		z-index: 10;
+	}
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 5%;
+		right: 5%;
+		bottom: 0px;
+		box-shadow: 0px 10px 10px rgba(236,240,245,0.80);
+		height: 20px;
+		border-radius: 100%;
+		z-index: 1;
+	}
+}
+.special {
+	background: #d4dee7;
+	width: 260px;
+	/*min-height: 390px;*/
+}
+.star {
+	color: @red-color;
+}
+ul {
+	padding-left: 18px;
+	font-size: 15px;
+	li {
+		list-style-type: none;
+		position: relative;
+		margin-top: 6px;
+		color: @base-light-color;
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 1.0rem;
+			background: @base-light-color;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			margin-left: -14px;
+		}
+	}
+}
+table {
+	border: 0px none;
+	th {
+		font-family: 'houschka_roundeddemibold';
+		font-size: 1.1rem;
+		line-height: 1.1;
+		text-align: left;
+	}
+	td {
+		font-size: 1rem;
+		p {
+			margin: 0px 0px 5px;
+		}
+	}
+	&,
+	th,
+	td {
+		border-width: 1px;
+		border-style: solid dashed;
+		border-color: lighten(black, 60%) lighten(black, 50%);
+	}
+	th,
+	td {
+		padding: 5px 10px;
+	}
+}
