@@ -55,14 +55,6 @@ html {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-body {
-  font-family: @font-family-base;
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
-}
-
 // Reset fonts for relevant elements
 input,
 button,
@@ -215,7 +207,10 @@ hr {
 }
 body,
 html {
-	height: auto;
+	height: 100%;
+}
+.page {
+	min-height: 100%;
 }
 .content {
 	img {
@@ -240,95 +235,6 @@ a:active:focus,button:active:focus {
 	&:active:focus {
 		outline: none;
 	}
-}
-.readmore {
-	font-size: 15px!important;
-	color: @base-color!important;
-	font-weight: 700;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	text-decoration: none;
-	.decorate {
-		border-bottom: 1px solid #a1a1a1;
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 1.0;
-	}
-	&:hover {
-		.decorate {
-			border-bottom-color: transparent;
-		}
-		/*
-		.icons--readmore:after {
-			.sprite(@readmore-hover);
-		}
-		*/
-	}
-	.icons {
-		vertical-align: middle;
-		margin-left: 6px;
-	}
-}
-.feedback {
-	line-height: 1.1;
-	font-size: 15px;
-	font-weight: 700;
-	display: inline-block;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	.decorate {
-		display: inline-block;
-		vertical-align: middle;
-		font-size: 15px;
-		line-height: 1.0;
-		border-bottom: 1px solid;
-		margin-left: 10px;
-	}
-	&:hover {
-		/*
-		.icons--back {
-			&:after {
-				.sprite(@back-hover);
-			}
-		}
-		*/
-		.decorate {
-			border-bottom-color: transparent;
-		}
-	}
-}
-.shadow-line {
-	display: block;
-	position: relative;
-	height: 40px;
-	margin-bottom: 40px;
-	&:after {
-		content: "";
-		background: #fff;
-		display: block;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-		z-index: 10;
-	}
-	&:before {
-		content: "";
-		display: block;
-		position: absolute;
-		left: 5%;
-		right: 5%;
-		bottom: 0px;
-		box-shadow: 0px 10px 10px rgba(236,240,245,0.80);
-		height: 20px;
-		border-radius: 100%;
-		z-index: 1;
-	}
-}
-.special {
-	background: #d4dee7;
-	width: 260px;
-	/*min-height: 390px;*/
 }
 ul {
 	padding-left: 18px;

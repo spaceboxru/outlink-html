@@ -19,16 +19,18 @@
 
 	</head>
 	<body>
-		
-		{{> header }}
-		
-		<div class="content">
+		<div class="page"><span class="page__bg"></span><span class="page__bg"></span><div class="page__content">
+			{{> header }}
+			
+			<div class="content">
 
-			{{> body }}
-		
+				{{> body }}
+			
+			</div>
+
 		</div>
-
 		{{> footer }}
+		</div>
 		
 		{{> footer-js }}
 	</body>
