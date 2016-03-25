@@ -4,23 +4,130 @@ title: Главная страница
 name: index
 ---
 
-<div class="row">
-	<div class="col-xs-8">
-		<div class="svg-outlink-logo svg-outlink-logo-dims"></div>
+<div class="p-b-85">
+
+	<div class="row">
+		<div class="col-xs-48">
+			
+			<form class="form m-b-55" action="" method="GET">
+				
+				<h2 class="form__title m-t-10 m-b-30">
+					Поиск исходящих ссылок на сайте
+				</h2>
+				
+				<div class="row">
+					<div class="col-xs-39 p-r-0">
+						<input class="form-control form-control--middle" type="text" placeholder="Введите адрес сайта..." />
+					</div>
+					<div class="col-xs-9 p-l-0">
+						
+						<a href="#popup" class="btn btn--font-14 btn--middle btn--bold btn--pink fancybox">Сканировать</a>
+						
+					</div>
+				</div>
+				
+			</form>
+			
+			<div style="display: none;">
+				<div id="popup" class="popup">
+					
+						<div class="svg-postman"><p class="popup__comment"><span class="valign">Примерное время
+						<br />
+						сканирования:
+						<br />
+						2 часа 40 минут</span></p></div>
+					
+					<h2 class="popup__title">
+						Сканируем сайт
+					</h2>
+					<div class="popup__content">
+						<p>
+							Оставьте адрес вашей эл. почты и мы сообщим когда задание будет выполнено
+						</p>
+					</div>
+					<form class="popup__form" action="">
+						<div class="row">
+							<div class="col-xs-39 p-r-0">
+								
+								<input class="form-control form-control--middle" type="text" placeholder="Ваша электронная почта..." />
+								
+							</div>
+							<div class="col-xs-9 p-l-0">
+								
+								<a href="" class="btn btn--font-14 btn--middle btn--bold btn--violet fancybox">Подтвердить</a>
+								
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+		</div>
 	</div>
-	<div class="col-xs-8">
-		<div class="svg-scanning svg-scanning-dims"></div>
+	
+	<div class="services">
+		<div class="row">
+			<div class="col-xs-14">
+				<div class="services__item">
+					<div class="svg-scanning m-b-25"></div>
+					<h2 class="services__item-title">
+						Сканирование
+						<br />
+						без ограничений
+					</h2>
+					<div class="services__item-content">
+						<p>
+							Для больших сайтов действует ограничение в 10 000 страниц, по мере развития ресурса и оно будет снято
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-10">
+				<div class="services__item m-t-10">
+					<div class="svg-check-site m-t-15 m-b-25"></div>
+					<h2 class="services__item-title">
+						Проверка сайта
+						<br />
+						в данный момент
+					</h2>
+					<div class="services__item-content">
+						<p>
+							Вы получаете информацию о ссылках, которые стоят на сайте в данный момент
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="services__item">
+					<div class="svg-out-link m-t-15 m-b-25"></div>
+					<h2 class="services__item-title">
+						100% выявление
+						<br />
+						исходящих ссылок
+					</h2>
+					<div class="services__item-content">
+						<p>
+							На данный момент не было ни одного случая пропуска ссылок
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="services__item">
+					<div class="svg-pay-free m-t-15 m-b-25"></div>
+					<h2 class="services__item-title">
+						Бесплатный
+						<br />
+						тариф
+					</h2>
+					<div class="services__item-content">
+						<p>
+							Мы планируем ввести платные услуги, однако только за приятные «плюшки»
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-xs-8">
-		<div class="svg-check-site svg-check-site-dims"></div>
-	</div>
-	<div class="col-xs-8">
-		<div class="svg-out-link svg-out-link-dims"></div>
-	</div>
-	<div class="col-xs-8">
-		<div class="svg-pay-free svg-pay-free-dims"></div>
-	</div>
-	<div class="col-xs-8">
-		<div class="svg-postman svg-postman-dims"></div>
-	</div>
+
 </div>
