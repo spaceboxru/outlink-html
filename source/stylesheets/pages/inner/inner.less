@@ -1,7 +1,13 @@
 
 .line {
 	padding: 5px 30px;
+	&--dark {
+		background-color: #f7f7f7;
+		padding-top: 23px;
+		padding-bottom: 22px;
+	}
 }
+
 .media {
 	&__frame {
 		.icons {
@@ -34,6 +40,257 @@
 		.icons {
 			position: relative;
 			top: -2px;
+		}
+	}
+}
+
+.scanning {
+	&__item {
+		&-title {
+			display: block;
+			color: #456;
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+		&-num {
+			display: inline-block;
+			color: @text-input-color;
+			font-size: 40px;
+			font-weight: 700;
+			line-height: 1.1;
+		}
+		&-badge {
+			background-color: @badge-green;
+			padding: 3px 5px;
+			margin-left: 7px;
+			font-size: 10px;
+			line-height: 1.0;
+			cursor: pointer;
+			&[aria-describedby] {
+				background-color: @badge-active-green;
+			}
+		}
+	}
+	a.scanning__item-num {
+		color: @text-green;
+		border-bottom: 1px solid;
+		&:hover {
+			border-bottom-color: transparent;
+			text-decoration: none;
+		}
+	}
+}
+
+.popover {
+	color: @text-light-grey;
+	border: 0px none;
+	border-radius: 0px;
+	padding: 0px;
+	font-size: 12px;
+	box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+	&.right>.arrow {
+		background: transparent;
+		border-width: 8px 8px 8px 0px;
+		left: -8px;
+		border-color: transparent;
+		&:after {
+			
+		}
+	}
+	.popover-content {
+		font-size: 12px;
+		line-height: 1.5;
+		padding: 24px 19px 25px;
+		p {
+			margin-bottom: 12px;
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.popover-title {
+		background: transparent;
+		display: block!important;
+		width: 11px;
+		height: 11px;
+		padding: 0px 0px;
+		border: 0px none;
+		border-radius: 0px;
+		position: absolute;
+		cursor: pointer;
+		top: 0px;
+		right: 0px;
+		width: 30px;
+		height: 30px;
+		&:after,
+		&:before {
+			content: "";
+			display: block;
+			background: #65b7ca;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			height: 3px;
+			width: 12px;
+			margin: 0px 0px 0px -6px;
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+		&:before {
+			transform: rotate(+45deg);
+		}
+	}
+}
+
+.results {
+	&>.line {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		&:nth-child(2n) {
+			background-color: @footer-bg-color;
+		}
+		&:nth-child(2n + 1) {
+			background-color: transparent;
+		}
+	}
+	a {
+		color: @text-green;
+		cursor: pointer;
+		&,
+		&:hover {
+			text-decoration: none;
+		}
+		.decorate {
+			border-bottom-width: 1px;
+			border-bottom-style: dashed;
+		}
+		&:hover {
+			.decorate {
+				border-color: transparent;
+			}
+		}
+	}
+	&__item {
+		&-num {
+			font-size: 12px;
+			line-height: 1.9;
+			color: @text-grey;
+		}
+	}
+	&__title {
+		font-size: 20px;
+		line-height: 1.2;
+		color: @text-input-color;
+		padding-top: 40px;
+		padding-bottom: 30px;
+	}
+	&__header {
+		background-color: #bccad7;
+		margin-left: 30px;
+		margin-right: 30px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		&,
+		& a {
+			color: @text-white;
+		}
+	}
+	&__detail {
+		background: white;
+		box-shadow: 0px 3px 15px 0px rgba(89,112,134,0.4);
+		padding: 0px;
+		margin-left: -20px;
+		margin-right: -20px;
+		margin: 20px -20px 0px;
+		position: relative;
+		border-radius: 2px;
+		&:before,
+		&:after {
+			content: "";
+			display: block;
+		}
+		&:before {
+			border-width: 6px 6px;
+			border-style: solid;
+			border-color: transparent transparent white;
+			position: absolute;
+			left: 35px;
+			top: -12px;
+		}
+		&-in {
+			padding: 18px 20px 23px;
+		}
+		.row {
+			padding: 7px 0px 8px;
+		}
+		a {
+			.decorate {
+				border-bottom-style: solid;
+			}
+		}
+	}
+}
+
+.pagination {
+	margin-top: 40px;
+	margin-bottom: 95px;
+	&>li>a,
+	&>li>span,
+	&>li:last-child>a,
+	&>li:last-child>span {
+		border-radius: 0px;
+	}
+	&>li>a,
+	&>li>span {
+		border: 0px none;
+		padding: 15px 20px;
+		font-size: 12px;
+		margin-right: 4px;
+	}
+	&>li>span {
+		&,
+		&:hover {
+			background-color: transparent;
+		}
+	}
+	&>li>a {
+		background-color: #f6f7f8;
+		color: @text-green;
+		&.active {
+			background-color: #bccad7;
+			color: @text-white;
+		}
+	}
+	.pagination__next,
+	.pagination__prev {
+		font-size: 14px;
+		line-height: 1.25;
+	}
+	.pagination__prev {
+		.icons {
+			margin-right: 8px;
+		}
+		&.disabled {
+			color: @text-white;
+			.icons--arrow-left {
+				&:after {
+					.sprite(@arrow-left-unactive);
+				}
+			}
+		}
+	}
+	.pagination__next {
+		.icons {
+			margin-left: 8px;
+		}
+		&.disabled {
+			color: @text-white;
+			.icons--arrow-right {
+				&:after {
+					.sprite(@arrow-right-unactive);
+				}
+			}
 		}
 	}
 }

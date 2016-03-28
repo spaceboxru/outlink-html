@@ -14,4 +14,17 @@ jQuery(function($){
 		
 	}());
 	
+	/**
+	* Popover activate
+	*/
+	(function(){
+		var $popover = $("[data-toggle=popover]");
+		
+		$popover.popover();
+	
+		$(document).on("click", ".popover-title", function() {
+			$popover.filter("[aria-describedby^='popover']").trigger("click");
+		});
+	}());
+	
 });
