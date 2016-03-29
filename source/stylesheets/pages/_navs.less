@@ -1,0 +1,49 @@
+
+.leftnav {
+	&__item {
+		background-color: #f7f7f7;
+		padding: 25px 30px;
+		margin-bottom: 5px;
+		font-size: 14px;
+		font-weight: 700;
+		a {
+			text-decoration: none;
+			color: @text-green;
+		}
+		.decorate {
+			border-bottom: 1px dashed;
+		}
+		&:hover {
+			.decorate {
+				border-bottom-color: transparent;
+			}
+		}
+		&:hover,
+		&.active {
+			&>a {
+				color: @text-input-color;
+			}
+		}
+		ul {
+			padding: 0px;
+			li {
+				padding: 0px 0px 0px 20px;
+				margin: 20px 0px 0px;
+				position: relative;
+				&:before {
+					content: "\2014";
+					font-size: 13px;
+					color: @text-green;
+					position: absolute;
+					left: 0px;
+				}
+				&:hover,
+				&.active {
+					&:before {
+						color: @text-input-color;
+					}
+				}
+			}
+		}
+	}
+}
