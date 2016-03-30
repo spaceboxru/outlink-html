@@ -172,7 +172,7 @@ module.exports = function(grunt) {
 						//,'<%= dirs.input %>/javascripts/vendor/jquery.inputmask.3.x/jquery.inputmask.js'
 						,'bower_components/fancybox/source/jquery.fancybox.pack.js'
 						
-
+						,'<%= dirs.input %>/javascripts/vendor/d3js/d3.js'
 
 					],
 					'<%= dirs.input %>/javascripts/rainbow.js': [
