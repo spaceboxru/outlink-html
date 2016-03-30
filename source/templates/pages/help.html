@@ -4,7 +4,7 @@ title: Помощь
 name: help
 ---
 
-<div class="line p-t-70 p-b-30">
+<div class="line p-t-40 p-b-35">
 	
 	<h1>
 		Помощь
@@ -13,7 +13,7 @@ name: help
 </div>
 
 <div class="row">
-	<div class="col-xs-11">
+	<div class="col-xs-13">
 		<nav class="leftnav">
 			<ul>
 				<li class="leftnav__item">
@@ -44,13 +44,13 @@ name: help
 						</li>
 					</ul>
 				</li>
-				<li class="leftnav__item">
+				<li class="leftnav__item active">
 					<a href="#leftnav-3" data-toggle="collapse" aria-expanded="false"><span class="decorate">Как самостоятельно удалить «плохую» исходящую ссылку с сайта?</span></a>
-					<ul id="leftnav-3" class="collapse">
+					<ul id="leftnav-3" class="collapse in">
 						<li class="leftnav__item">
 							<a href=""><span class="decorate">Как удалить исходящую ссылку с сайта на Битрикс / Bitrix.</span></a>
 						</li>
-						<li class="leftnav__item">
+						<li class="leftnav__item active">
 							<a href=""><span class="decorate">Как удалить исходящую ссылку с сайта на Wordpress / Вордпресс</span></a>
 						</li>
 						<li class="leftnav__item">
@@ -75,7 +75,7 @@ name: help
 			</ul>
 		</nav>
 	</div>
-	<div class="col-xs-37">
+	<div class="col-xs-34 col-xs-offset-1 m-b-50">
 		
 		<h2>
 			Как самостоятельно удалить «плохую» исходящую ссылку с сайта?
@@ -105,9 +105,16 @@ name: help
 			Если ссылаемый сайт находиться в шаблоне Joomla, то она ОБЯЗАТЕЛЬНО будет прописана в файле index.php. Чаще всего это будет самый простой фрагмент кода, примерно такой:
 		</p>
 		
-		<div class="code">
-			
-		</div>
+<pre><code data-language="html">&lt;div id="write-navigation"&gt;
+	&lt;img src="/img/ico_post.gif" width="15" height="8" alt="Написать в блог, портфолио или журнал" /&gt;
+	&lt;span class="link"&gt;Написать&lt;/span&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="/blogs/new-post/"&gt;В блог&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="/blogs/new-writen/"&gt;В свой журнал&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="/blogs/new-portfolio/" class="pdbb-3"&gt;В портфолио&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="/swamp/new-post/" class="pdbb-3"&gt;В болото&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
 		
 		<p>
 			Достаточно её всего лишь удалить. Тут все в принципе и дураку понятно. Убрать копирайт jcomments Вот тут уже все не так легко как в прошлых двух примерах

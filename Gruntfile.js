@@ -143,6 +143,7 @@ module.exports = function(grunt) {
 				files: {
 					'<%= dirs.output %>/javascripts/app.js': ['<%= dirs.input %>/javascripts/app.js'],
 					'<%= dirs.input %>/javascripts/libs.js': [
+						
 						'bower_components/modernizr/modernizr.js'
 						
 						,'bower_components/jquery/dist/jquery.js'
@@ -167,10 +168,19 @@ module.exports = function(grunt) {
 						
 						//,'<%= dirs.input %>/javascripts/vendor/selectize/standalone/selectize.js'
 						
-						,'<%= dirs.input %>/javascripts/vendor/jquery.inputmask.3.x/inputmask.js'
-						,'<%= dirs.input %>/javascripts/vendor/jquery.inputmask.3.x/jquery.inputmask.js'
+						//,'<%= dirs.input %>/javascripts/vendor/jquery.inputmask.3.x/inputmask.js'
+						//,'<%= dirs.input %>/javascripts/vendor/jquery.inputmask.3.x/jquery.inputmask.js'
 						,'bower_components/fancybox/source/jquery.fancybox.pack.js'
+						
 
+
+					],
+					'<%= dirs.input %>/javascripts/rainbow.js': [
+						'<%= dirs.input %>/javascripts/vendor/rainbow/rainbow.js'
+						,'<%= dirs.input %>/javascripts/vendor/rainbow/language/generic.js'
+						,'<%= dirs.input %>/javascripts/vendor/rainbow/language/javascript.js'
+						,'<%= dirs.input %>/javascripts/vendor/rainbow/language/html.js'
+						,'<%= dirs.input %>/javascripts/vendor/rainbow/language/css.js'						
 					]
 				}
 			},
@@ -189,6 +199,9 @@ module.exports = function(grunt) {
 					],
 					'<%= dirs.output %>/javascripts/app.min.js': [
 						'<%= dirs.input %>/javascripts/app.js'
+					],
+					'<%= dirs.output %>/javascripts/rainbow.js': [
+						'<%= dirs.input %>/javascripts/rainbow.js'
 					]
 				}
 			}

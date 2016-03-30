@@ -1,8 +1,11 @@
 
 .leftnav {
+	ul {
+		padding: 0px;
+	}
 	&__item {
 		background-color: #f7f7f7;
-		padding: 25px 30px;
+		padding: 22px 20px 22px 27px;
 		margin-bottom: 5px;
 		font-size: 14px;
 		font-weight: 700;
@@ -14,8 +17,10 @@
 			border-bottom: 1px dashed;
 		}
 		&:hover {
-			.decorate {
-				border-bottom-color: transparent;
+			&>a {
+				.decorate {
+					border-bottom-color: transparent;
+				}
 			}
 		}
 		&:hover,
@@ -25,11 +30,11 @@
 			}
 		}
 		ul {
-			padding: 0px;
 			li {
 				padding: 0px 0px 0px 20px;
 				margin: 20px 0px 0px;
 				position: relative;
+				font-weight: 500;
 				&:before {
 					content: "\2014";
 					font-size: 13px;
