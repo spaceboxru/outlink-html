@@ -151,7 +151,7 @@ jQuery(function($){
 					
 					pattern
 						.append('image')
-						.attr('xlink:href', '../images/sprites/element-' + i + '.png')
+						.attr('xlink:href', 'images/sprites/element-' + i + '.png')
 						.attr('x', '0')
 						.attr('y', '0')
 						.attr('width', '50')
