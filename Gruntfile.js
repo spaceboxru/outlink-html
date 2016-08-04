@@ -98,7 +98,7 @@ module.exports = function(grunt) {
 		less: {
 			build: {
 				options: {
-					compress: true
+					compress: false
 				},
 				expand: true,
 				cwd: '<%= dirs.input %>/stylesheets',
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
 		bless: {
 			css: {
 				options: {
-					compress: true
+					compress: false
 				},
 				files: {
 					'<%= dirs.output %>/stylesheets/app.min.css': '<%= dirs.input %>/stylesheets/temp/app.css'
